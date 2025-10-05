@@ -10,8 +10,8 @@ export default async function getVideosByQuerry(query) {
       params: {
         q: query,
         key: API_KEY,
-        maxResults: 10,
-        perPage: 10,
+        maxResults: 12,
+        perPage: 12,
         type: 'video',
         part: 'snippet'
       }
