@@ -4,11 +4,12 @@ import { showError } from './ux-ui';
 const API_KEY = "AIzaSyCDg8YNpb_-7aAum3KjZ3dvcD0ZALEWH48";
 const API_ADDRESS = "https://www.googleapis.com/youtube/v3/search";
 
-export default async function getVideosByQuerry(query) {
+export default async function getVideosByQuerry(query, page = 1) {
   try {
     const response = await axios.get(API_ADDRESS, {
       params: {
         q: query,
+        page: page,
         key: API_KEY,
         maxResults: 12,
         perPage: 12,

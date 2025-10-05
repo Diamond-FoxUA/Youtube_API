@@ -10,6 +10,8 @@ const videoListEl = document.querySelector('.video-list');
 const containerEl = document.querySelectorAll('.container');
 
 let currentQuery = '';
+let page = 1;
+let totalHits = 0;
 
 formEl.addEventListener('submit', handleClick);
 
@@ -20,15 +22,16 @@ async function handleClick(event) {
   currentQuery = inputEl.value.trim();
 
   if (!currentQuery) {
-    showError('Empty querry!');
+    showError('Please fill out the search field.');
     return;
   }
 
+  page = 1;
   clearVideoList(videoListEl);
 
   try {
     changeLayout(containerEl);
-    const videos = await getVideosByQuerry(currentQuery);
+    const videos = await getVideosByQuerry(currentQuery, page);
     console.log(videos);
 
     createVideoList(videoListEl, videos.items);
