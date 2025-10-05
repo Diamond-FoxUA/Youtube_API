@@ -1,4 +1,24 @@
-.gallery {
+.video-list {
   display: flex;
   flex-wrap: wrap;
+  gap: 15px;
+}
+
+.video-card {
+  width: calc((100% - (15px * 3)) / 4);
+  box-sizing: border-box;
+}
+
+.video-card a {
+  display: block;
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 1em;
+}
+
+.video-text {
+  font-size: 16px;
+  padding: 5px;
+  width: 300px;
 }

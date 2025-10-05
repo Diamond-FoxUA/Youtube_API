@@ -4,6 +4,8 @@
   max-width: 375px;
   margin: 100px auto;
   padding: 0 16px;
+
+  transition: margin 500ms ease-in-out;
 }
 /* Styles for Tablet devices */
 @media only screen and (min-width: 768px) {
