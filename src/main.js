@@ -1,5 +1,5 @@
 import getVideosByQuerry from './js/YouTube-API';
-import { createVideoList, clearVideoList } from './js/render-functions';
+import { createVideoList, clearVideoList } from './js/render-functions.js';
 import { changeLayout, changeBtnCondition, showError } from './js/ux-ui';
 
 const formEl = document.querySelector('.form');
