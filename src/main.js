@@ -1,6 +1,6 @@
 import getVideosByQuerry from './js/YouTube-API';
 import { createVideoList, clearVideoList } from './js/render-functions';
-import { changeLayout, changeBtnCondition } from './js/ux-ui';
+import { changeLayout, changeBtnCondition, showError } from './js/ux-ui';
 
 const formEl = document.querySelector('.form');
 const inputEl = document.querySelector('.search-input');
@@ -20,7 +20,7 @@ async function handleClick(event) {
   currentQuery = inputEl.value.trim();
 
   if (!currentQuery) {
-    alert('Empty querry!');
+    showError('Empty querry!');
     return;
   }
 
